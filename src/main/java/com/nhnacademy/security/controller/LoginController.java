@@ -33,13 +33,14 @@ public class LoginController {
     @PostMapping("/login")
     public String doLogin(@RequestParam String id
             , @RequestParam String pwd
-    , HttpServletRequest request) {
-        if(loginService.isLogin(id, pwd)){
+            , HttpServletRequest request) {
+
+        if (loginService.isLogin(id, pwd)) {
             HttpSession session = request.getSession();
             session.setAttribute("id", id);
         }
 
-        return "redirect: /login";
+        return "redirect:/";
     }
 
 }
