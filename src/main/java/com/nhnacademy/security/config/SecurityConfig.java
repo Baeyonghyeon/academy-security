@@ -16,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @EnableWebSecurity(debug = true)
+// TODO #5: 아래 주석 해제
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
@@ -38,7 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordParameter("pwd")
                 .loginPage("/auth/login")
                 .loginProcessingUrl("/login")
-                // TODO #8: login success handler 설정
                 .successHandler(loginSuccessHandler(null))
                 .and()
             .logout()
@@ -77,7 +78,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    // TODO #7: login success handler bean
     @Bean
     public AuthenticationSuccessHandler loginSuccessHandler(RedisTemplate<String, String> redisTemplate) {
         return new LoginSuccessHandler(redisTemplate);

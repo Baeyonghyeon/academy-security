@@ -18,7 +18,6 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
 
-// TODO #4: redis + HttpSession
 @EnableRedisHttpSession
 @Configuration
 @PropertySource("classpath:redis.properties")
@@ -38,7 +37,6 @@ public class RedisConfig implements BeanClassLoaderAware {
     private ClassLoader classLoader;
 
 
-    // TODO #3: redis configuration
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
         RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
@@ -62,7 +60,6 @@ public class RedisConfig implements BeanClassLoaderAware {
         return redisTemplate;
     }
 
-    // TODO #6: session cookie serializer
     @Bean
     public CookieSerializer cookieSerializer() {
         DefaultCookieSerializer serializer = new DefaultCookieSerializer();

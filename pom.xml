@@ -179,7 +179,6 @@
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
 
-        <!-- TODO #1: redis 라이브러리 -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
@@ -191,7 +190,6 @@
             <version>6.1.8.RELEASE</version>
         </dependency>
 
-        <!-- TODO #2: spring-session 라이브러리 -->
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>

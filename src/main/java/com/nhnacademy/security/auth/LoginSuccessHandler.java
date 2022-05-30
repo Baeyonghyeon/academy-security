@@ -13,7 +13,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
-// TODO #9: login success handler 구현
 public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
     private final RedisTemplate<String, String> redisTemplate;
 
