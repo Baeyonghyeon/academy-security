@@ -39,7 +39,7 @@ public class LoginController {
             session.setAttribute("id", id);
         }
 
-        return "login";
+        return "redirect: /login";
     }
 
 }
